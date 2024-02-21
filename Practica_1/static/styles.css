@@ -127,3 +127,17 @@ html {
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
+.bg.wolf{
+  background-image: url(https://i.pinimg.com/originals/8f/d8/2a/8fd82af202ad61b0d6bc9d790b2db064.jpg);
+}
+.bg-rainbow{
+  animation: change-color 2s infinite alternate;
+}
+@keyframes change-color{
+   0%{background-color: aqua;}
+   25%{background-color: yellow;}
+   50%{background-color: pink;}
+   75%{background-color: red;}
+   100%{background-color: green;}
+}
+
