@@ -19,7 +19,7 @@ export default function Home() {
           <code class="mx-2">./routes/index.tsx</code> file, and refresh.
         </p>
         <Counter count={count} />
-        <text>Holaaaa</text>
+        <text>Para buscar la leccion añade /{"[numero]"} a la url actual</text>
       </div>
     </div>
   );

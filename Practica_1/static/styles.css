@@ -127,17 +127,50 @@ html {
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
-.bg.wolf{
+.bg-wolf{
   background-image: url(https://i.pinimg.com/originals/8f/d8/2a/8fd82af202ad61b0d6bc9d790b2db064.jpg);
+}
+.bg-mordecai{
+  height: 1000px;
+  background-image: url(https://pbs.twimg.com/media/E7qhNeqUYAEGAt0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .bg-rainbow{
   animation: change-color 2s infinite alternate;
 }
 @keyframes change-color{
    0%{background-color: aqua;}
-   25%{background-color: yellow;}
-   50%{background-color: pink;}
-   75%{background-color: red;}
+   20%{background-color: yellow;}
+   40%{background-color: pink;}
+   60%{background-color: red;}
+   80%{background-color: blueviolet;}
    100%{background-color: green;}
 }
-
+.comic-sans{
+  font-family: "Comic Sans MS", "Comic Sans", fantasy;
+}
+.quote-display{
+  font-family: "Comic Sans MS", "Comic Sans", fantasy;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin: auto;
+  align-content: center;
+}
+.flex{
+  display: flex;
+}
+.quote-image{
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  transition: content 0,3s ease
+}
+.quote-image:hover{
+  content: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRMJsiIuA5RkaoPem2CLJz3YgdrXTVXiNS-g&usqp=CAU);
+}
+.quote-text{
+  animation: change-color 2s infinite alternate;
+  border-radius: 10px;
+}
