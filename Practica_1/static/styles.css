@@ -219,6 +219,7 @@ html {
   align-self: center;
   border: 3px dotted black;
   transform: rotate(1.5deg);
+
 }
 .side-panel{
   flex: 1 0 33.33%;
@@ -258,6 +259,7 @@ html {
 }
 .popup:hover{
   animation-play-state: paused;
+  width: 70%;
   transform: scale(120%);
 }
 .profile-icon{
@@ -276,7 +278,12 @@ html {
   border-top: 2px solid black;
   text-overflow: ellipsis;
 }
-
+.videos-display{
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
 
 @keyframes change-color{
   0%{background-color: aqua;}

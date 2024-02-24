@@ -41,6 +41,43 @@ const Page = (props: PageProps<string>) => {
           <Popup />
         </div>
       </div>
+      <div class="videos-display">
+        <h2>Origen del Romance</h2>
+        <div>
+          <iframe
+            width="33%"
+            height="315"
+            src="https://www.youtube.com/embed/S6ff6_beeHY?si=AYBbwAabvfolB-Vh"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay;"
+            allowfullscreen
+          >
+            V1
+          </iframe>
+          <iframe
+            width="33%"
+            height="315"
+            src="https://www.youtube.com/embed/zx0gm3ZaASs?si=TQAdlZvB97oyJ9Hl"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay;"
+            allowfullscreen
+          >
+            V2
+          </iframe>
+          <iframe
+            width="34%"
+            height="315"
+            src="https://www.youtube.com/embed/irT88XcjpA4?si=stxLMpqwj-DFBD9c"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay;"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </div>
     </div>
   );
 };
