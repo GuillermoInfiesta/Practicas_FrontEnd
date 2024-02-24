@@ -1,6 +1,6 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import Axios from "npm:axios";
-
+import { Popup } from "../components/popup.tsx";
 export const handler: Handlers = {
   GET: async (_req: Request, ctx: FreshContext<unknown, string>) => {
     try {
@@ -21,14 +21,14 @@ export const handler: Handlers = {
 const Page = (props: PageProps<string>) => {
   const quote = props.data;
   return (
-    <div class="">
+    <div class="main">
       <div class="tittle">
-        ES LA HORA DE SABER TU FRASE DEL DIA, LETS GOOOOOOOO!=!=!=!=!=!
+        <p>ITS TIME TO KNOW YOUR DAILY SAYING.</p>{" "}
+        <p>LETS GOOOOOOOO!=!=!=!=!=!</p>
       </div>
       <div class="main-flex">
-        <div class="side-panel">
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        <div class="side-panel flex-end">
+          <text class="running-text">Try and catch me</text>
         </div>
         <div class="quote-display flex">
           <image
@@ -37,7 +37,9 @@ const Page = (props: PageProps<string>) => {
           />
           <text class="quote-text">{quote}</text>
         </div>
-        <div class="side-panel">Adios</div>
+        <div class="side-panel flex-start">
+          <Popup />
+        </div>
       </div>
     </div>
   );
