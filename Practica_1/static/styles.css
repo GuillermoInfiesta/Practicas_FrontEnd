@@ -96,6 +96,9 @@ html {
 .flex {
   display: flex;
 }
+.wrap{
+  flex-wrap: wrap;
+}
 .gap-8 {
   grid-gap: 2rem;
   gap: 2rem;
@@ -114,6 +117,9 @@ html {
 }
 .justify-center {
   justify-content: center;
+}
+.justify-around{
+  justify-content: space-around;
 }
 .border-2 {
   border-width: 2px;
@@ -139,24 +145,44 @@ html {
 .bg-rainbow{
   animation: change-color 2s infinite alternate;
 }
-@keyframes change-color{
-   0%{background-color: aqua;}
-   20%{background-color: yellow;}
-   40%{background-color: pink;}
-   60%{background-color: red;}
-   80%{background-color: blueviolet;}
-   100%{background-color: green;}
-}
 .comic-sans{
   font-family: "Comic Sans MS", "Comic Sans", fantasy;
 }
+.tittle{
+  height: 200px;
+  font-family:"Algerian" ;
+  font-size: 50px;
+  color: orange;
+  border: 5px solid pink;
+  background-image: url("https://gifdb.com/images/high/aesthetic-universe-galaxy-m17nhnv9hwflo8ss.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+.main-flex{
+  height: 1000px;
+  width: 1600px;
+  background-image: url(https://pbs.twimg.com/media/E7qhNeqUYAEGAt0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
 .quote-display{
+  flex: 1 0 33.33%;
   font-family: "Comic Sans MS", "Comic Sans", fantasy;
   width: auto;
   height: auto;
   padding: 10px;
   margin: auto;
   align-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid orange;
+  background-color: black;
+  animation: shake 1s infinite;
 }
 .flex{
   display: flex;
@@ -165,12 +191,65 @@ html {
   width: 300px;
   height: 300px;
   margin: auto;
-  transition: content 0,3s ease
+  transition: content 0,3s ease;
+  margin: 10%;
+  border: 2px solid yellow;
 }
 .quote-image:hover{
   content: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRMJsiIuA5RkaoPem2CLJz3YgdrXTVXiNS-g&usqp=CAU);
+  transform: rotateZ(-30deg);
 }
 .quote-text{
-  animation: change-color 2s infinite alternate;
+  min-width: 40%;
+  min-height: 8%;
+  font-size: 20px;
+  text-align: justify;
+  animation: change-color 2s infinite alternate, beat 2s infinite;
+  color: white;
   border-radius: 10px;
+  align-self: center;
+  border: 3px dotted black;
+  transform: rotate(3deg);
+}
+.side-panel{
+  flex: 1 0 33.33%;
+  font-size: 40px;
+  border: 10px solid black
+}
+
+
+
+
+
+
+@keyframes change-color{
+  0%{background-color: aqua;}
+  20%{background-color: yellow;}
+  40%{background-color: pink;}
+  60%{background-color: red;}
+  80%{background-color: blueviolet;}
+  100%{background-color: green;}
+}
+@keyframes beat{
+  0%{font-size: 100%;}
+  20%{font-size: 75% ;}
+  40%{font-size: 50%;}
+  60%{font-size: 75%;}
+  80%{font-size: 100%;}
+  100%{font-size: 110%;}
+}
+@keyframes rotate{
+  0%{transform: rotate(0deg);}
+  20%{transform: rotate(72deg);}
+  40%{transform: rotate(144deg);}
+  60%{transform: rotate(216deg);}
+  80%{transform: rotate(288deg);}
+  100%{transform: rotate(360deg);}
+}
+@keyframes wiggle{
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
 }

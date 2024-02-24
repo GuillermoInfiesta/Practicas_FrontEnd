@@ -21,13 +21,23 @@ export const handler: Handlers = {
 const Page = (props: PageProps<string>) => {
   const quote = props.data;
   return (
-    <div class="bg-mordecai flex" style="height: 800px">
-      <div class="quote-display">
-        <image
-          class="quote-image"
-          src="https://i.pinimg.com/originals/8f/d8/2a/8fd82af202ad61b0d6bc9d790b2db064.jpg"
-        />
-        <text class="quote-text">{quote}</text>
+    <div class="">
+      <div class="tittle">
+        ES LA HORA DE SABER TU FRASE DEL DIA, LETS GOOOOOOOO!=!=!=!=!=!
+      </div>
+      <div class="main-flex">
+        <div class="side-panel">
+          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        </div>
+        <div class="quote-display flex">
+          <image
+            class="quote-image"
+            src="https://i.pinimg.com/originals/8f/d8/2a/8fd82af202ad61b0d6bc9d790b2db064.jpg"
+          />
+          <text class="quote-text">{quote}</text>
+        </div>
+        <div class="side-panel">Adios</div>
       </div>
     </div>
   );
