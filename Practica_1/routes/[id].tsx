@@ -1,6 +1,8 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import Axios from "npm:axios";
 import { Popup } from "../components/popup.tsx";
+import Video from "../components/Video.tsx";
+
 export const handler: Handlers = {
   GET: async (_req: Request, ctx: FreshContext<unknown, string>) => {
     try {
@@ -42,40 +44,23 @@ const Page = (props: PageProps<string>) => {
         </div>
       </div>
       <div class="videos-display">
-        <h2>Origen del Romance</h2>
-        <div>
-          <iframe
-            width="33%"
-            height="315"
-            src="https://www.youtube.com/embed/S6ff6_beeHY?si=AYBbwAabvfolB-Vh"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay;"
-            allowfullscreen
+        <h2>More about MordeTwi</h2>
+        <div class="flex">
+          <Video
+            tittle="4K Version"
+            source="https://www.youtube.com/embed/zx0gm3ZaASs?si=TQAdlZvB97oyJ9Hl"
           >
-            V1
-          </iframe>
-          <iframe
-            width="33%"
-            height="315"
-            src="https://www.youtube.com/embed/zx0gm3ZaASs?si=TQAdlZvB97oyJ9Hl"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay;"
-            allowfullscreen
+          </Video>
+          <Video
+            tittle="Long Version"
+            source="https://www.youtube.com/embed/jMCon8VTh7k?si=IZG27g6wsibZ92I-"
           >
-            V2
-          </iframe>
-          <iframe
-            width="34%"
-            height="315"
-            src="https://www.youtube.com/embed/irT88XcjpA4?si=stxLMpqwj-DFBD9c"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay;"
-            allowfullscreen
+          </Video>
+          <Video
+            tittle="Best Version"
+            source="https://www.youtube.com/embed/irT88XcjpA4?si=stxLMpqwj-DFBD9c"
           >
-          </iframe>
+          </Video>
         </div>
       </div>
     </div>
