@@ -12,7 +12,7 @@ export function Popup(props: JSX.HTMLAttributes) {
       </div>
       <div class="popup-message">
         <text>
-          If you think you are the one selected by god please dont doubt and
+          If you think you are the one chosen by god please dont doubt and
           contact us as soon as possible at +33 600 6017 293
         </text>
       </div>

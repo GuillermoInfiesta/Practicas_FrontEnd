@@ -29,17 +29,25 @@ const Page = (props: PageProps<string>) => {
         <p>LETS GOOOOOOOO!=!=!=!=!=!</p>
       </div>
       <div class="main-flex">
-        <div class="side-panel flex-end">
+        <div class="side-panel flex-end wrap justify-end">
+          <img
+            class="spinning-card"
+            src="https://upload.wikimedia.org/wikipedia/commons/9/90/RWS_Tarot_00_Fool.jpg"
+            height="500px"
+            width="200px"
+            alt="Image of the tarot card, the fool"
+          />
           <text class="running-text">Try and catch me</text>
         </div>
         <div class="quote-display flex">
           <image
             class="quote-image"
             src="https://i.pinimg.com/originals/8f/d8/2a/8fd82af202ad61b0d6bc9d790b2db064.jpg"
+            alt="depressed wolf meme"
           />
           <text class="quote-text">{quote}</text>
         </div>
-        <div class="side-panel flex-start">
+        <div class="side-panel flex-start justify-start">
           <Popup />
         </div>
       </div>
