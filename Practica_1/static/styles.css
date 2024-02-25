@@ -157,6 +157,13 @@ html {
 .comic-sans{
   font-family: "Comic Sans MS", "Comic Sans", fantasy;
 }
+.index{
+  background-color: black;
+  height: 800px;
+  text-align: center;
+  font-size: 60px;
+  color: white;
+}
 .main{
   width: 1600px;
   cursor: wait;
@@ -214,7 +221,6 @@ html {
   transition: content 0,3s ease;
   margin: 10%;
   border: 2px solid yellow;
-  transition: content 2 ease;
 }
 .quote-image:hover{
   content: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRMJsiIuA5RkaoPem2CLJz3YgdrXTVXiNS-g&usqp=CAU);
@@ -321,11 +327,9 @@ html {
 }
 @keyframes beat{
   0%{font-size: 100%;}
-  20%{font-size: 75% ;}
-  40%{font-size: 50%;}
-  60%{font-size: 75%;}
-  80%{font-size: 100%;}
-  100%{font-size: 110%;}
+ 33%{font-size: 50%;}
+ 66%{font-size: 125%;}
+ 100%{font-size: 100%;}
 }
 @keyframes rotate{
   0%{transform: rotate(0deg);}
