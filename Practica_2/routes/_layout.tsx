@@ -6,9 +6,9 @@ const Layout = (props: PageProps) => {
   return (
     <div>
       <div class="navigation-bar">
-        <NavButton route="/search" text="Todos los personajes" />
-        <NavButton route="/search/1" text="Un personaje" />
-        <NavButton route="" text="Añadir" />
+        <NavButton route="/all" text="Todos los personajes" />
+        <NavButton route="/search" text="Buscar personajes" />
+        <NavButton route="/add" text="Añadir personaje" />
       </div>
       <Component />
     </div>

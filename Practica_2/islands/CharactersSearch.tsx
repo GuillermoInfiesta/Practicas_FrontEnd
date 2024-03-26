@@ -8,7 +8,6 @@ const CharactersSearch: FunctionComponent = () => {
   const [name, setName] = useState<string>("");
   const [characters, setCharacters] = useState<CharacterParams[]>([]);
   const getCharacters = async () => {
-    console.log("me llaman");
     const res = await fetch(`https://supermondongo.deno.dev/${name}`, {
       method: "GET",
       mode: "cors",

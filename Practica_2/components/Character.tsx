@@ -10,11 +10,12 @@ const Character: FunctionComponent<CharacterParams> = (props) => {
   return (
     <div class="character-display">
       <image class="ch-image" src={image} alt={`${name}´s image`} />
-      <h1>{name}</h1>
+      <h2>{name}</h2>
       <audio controls>
         <source src={sound} />
       </audio>
     </div>
+    //ON BLUR CLEANUP
   );
 };
 export default Character;

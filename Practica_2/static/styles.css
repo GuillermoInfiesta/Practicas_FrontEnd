@@ -7,6 +7,9 @@
 * {
   margin: 0;
 }
+body{
+  background-color: rgba(245, 245, 220, 0.634);
+}
 button {
   color: inherit;
 }
@@ -34,6 +37,10 @@ html {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+a{
+  text-decoration: none;
+  color: white;
 }
 .transition-colors {
   transition-property: background-color, border-color, color, fill, stroke;
@@ -96,6 +103,10 @@ html {
 .flex {
   display: flex;
 }
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
 .gap-8 {
   grid-gap: 2rem;
   gap: 2rem;
@@ -132,12 +143,22 @@ html {
   color: white;
   display: flex ;
   font-size: 20px;
-  height: 70px;
+  height: 50px;
   align-self: center;
   justify-content: space-around;
+  gap: 1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 .navigation-button{
-  max-width: 33%;
+  width: 50%;
+  text-align: center;
+}
+.navigation-button:hover{
+ background-color: rgb(184, 1, 1);
+ font-size: larger;
+ border-bottom-left-radius: 10px;
+ border-bottom-right-radius: 10px;
 }
 
 .characters-display {
@@ -150,7 +171,9 @@ html {
 }
 .characters-display-grid{
   margin-top: 5px;
+  border-top: 2px solid black;
   display: grid;
+  gap: 1rem;
   grid-template-columns: repeat(4,1fr);
   grid-template-rows: 400px auto;
   background-color: rgba(245, 245, 220, 0.634);
@@ -158,11 +181,17 @@ html {
 .character-display{
   margin: 4px;
   padding: 2px;
-  /*max-width: 25%;*/
-  max-height: 400px;
+  height: 400px; 
   border: 3px solid black;
   align-items: center;
   border-radius: 10px;
+  text-align: center;
+  h2{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+  }
 }
 .character-display:hover{
   transform: scale(1.02);
@@ -170,7 +199,36 @@ html {
 }
 .ch-image{
   align-self: center;
-  height: 50%;
+  height: 60%;
   width: 100%;
   border-radius: 6px;
+}
+.add-character-display{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: center;
+  gap: 1rem;
+  h2{
+    border-bottom: 1px solid gray;
+  }
+}
+.character-form{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  button{
+    size: 20%;
+    margin: auto;
+  }
+}
+.error{
+  color: red;
+  background-color: rgba(255, 0, 0, 0.134);
+  border: 1px solid red;
 }

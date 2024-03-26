@@ -1,7 +1,7 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
-import Characters from "../../components/Characters.tsx";
-import CharactersSearch from "../../islands/CharactersSearch.tsx";
-import { CharacterParams } from "../../components/Character.tsx";
+import Characters from "../components/Characters.tsx";
+import CharactersSearch from "../islands/CharactersSearch.tsx";
+import { CharacterParams } from "../components/Character.tsx";
 /*
 const Page = (props: PageProps) => {
   return (
@@ -33,8 +33,8 @@ const Page = (props: PageProps) => {
   const characters = props.data || [];
   return (
     <div>
-      <form action="/search/a">
-        <input type="text" name="name" />
+      <form action="/search">
+        <input type="text" name="name" placeholder="Nombre" />
         <button>Submit</button>
       </form>
       <Characters characters={characters} />

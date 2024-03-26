@@ -1,5 +1,5 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
-import Characters from "../../components/Characters.tsx";
+import Characters from "../components/Characters.tsx";
 
 export const handler: Handlers = {
   GET: async (_req: Request, ctx: FreshContext<unknown>): Promise<any> => {
@@ -11,7 +11,12 @@ export const handler: Handlers = {
 };
 const Page = (props: PageProps) => {
   const characters = props.data;
-  return <Characters characters={characters} />;
+  return (
+    <div>
+      <h1>Resultados:</h1>
+      <Characters characters={characters} />
+    </div>
+  );
 };
 
 export default Page;

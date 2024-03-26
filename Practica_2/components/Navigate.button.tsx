@@ -8,11 +8,9 @@ type NavButtonParams = {
 const NavButton: FunctionComponent<NavButtonParams> = (props) => {
   const { route, text } = props;
   return (
-    <div class="navigation-button">
-      <a href={route}>
-        <text>{text}</text>
-      </a>
-    </div>
+    <a href={route} class="navigation-button">
+      <text>{text}</text>
+    </a>
   );
 };
 
