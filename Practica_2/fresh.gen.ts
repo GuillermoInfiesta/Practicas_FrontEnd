@@ -12,9 +12,7 @@ import * as $api_deleteCharacter from "./routes/api/deleteCharacter.ts";
 import * as $borrar from "./routes/borrar.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $search from "./routes/search.tsx";
-import * as $Character from "./islands/Character.tsx";
 import * as $CharacterAddForm from "./islands/CharacterAddForm.tsx";
-import * as $CharactersSearch from "./islands/CharactersSearch.tsx";
 import * as $DeleteButton from "./islands/DeleteButton.tsx";
 import * as $borrar_1 from "./islands/borrar.tsx";
 import { type Manifest } from "$fresh/server.ts";
@@ -33,9 +31,7 @@ const manifest = {
     "./routes/search.tsx": $search,
   },
   islands: {
-    "./islands/Character.tsx": $Character,
     "./islands/CharacterAddForm.tsx": $CharacterAddForm,
-    "./islands/CharactersSearch.tsx": $CharactersSearch,
     "./islands/DeleteButton.tsx": $DeleteButton,
     "./islands/borrar.tsx": $borrar_1,
   },

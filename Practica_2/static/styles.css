@@ -142,6 +142,10 @@ h1{
   font-variant-numeric: tabular-nums;
 }
 
+.full-width{
+  width: 100%;
+}
+
 .navigation-bar {
   background-color: rgb(132, 10, 10);
   color: white;
@@ -166,6 +170,21 @@ h1{
  border-bottom-right-radius: 10px;
 }
 
+.home-page{
+  text-align: center;
+  font-size: larger;
+  margin: 1rem;
+  .home-page-greeting{
+    width: 60%;
+    margin: auto;
+    align-self: center;
+    p{
+      margin: 1rem;
+      border-bottom: 2px solid gray;  
+    }
+  }
+}
+
 .characters-display {
   margin-top: 5px;
   display: flex;
@@ -179,7 +198,7 @@ h1{
   margin-top: 5px;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(320px, 350px));
   grid-template-rows: 400px auto;
   background-color: rgba(245, 245, 220, 0.634);
 }
@@ -199,9 +218,6 @@ h1{
   }
   .delete-div{
     visibility: hidden;
-  }
-  button{
-    background-color: red;
   }
 }
 .character-display:hover{
@@ -252,20 +268,74 @@ h1{
   background-color: rgba(0, 255, 0, 0.134);
   border: 1px solid rgb(0,255,0);
 }
-.delete-div{
+.delete-div{  
   display: flex;
   gap: 5%;
   .delete-form{
     width: 50%;
     display: flex;
-    align-content: end;
+    gap: 0.5rem;
+    justify-content: flex-end;
     input{
       width: 60%;
     }
     button{
       width: 40%;
+      background-color: rgba(251, 20, 20, 0.805);
     }
   }
+}
+.search-display{
+  margin-top: 1rem;
+  display: flex;
+  border-top: 2px solid black;
+  .character-display{
+    align-self: center;
+    width: 333px;
+    margin: auto;
+    margin-top: 1rem;
+  }
+}
+.search-form{
+  padding: 1rem;
+  align-content: center;
+  text-align: center;
+  h2{
+    font-weight: lighter;
+  }
+  input{
+    width: 40%;
+    height: 30px;
+  }
+  button{
+    height: 30px;
+  }
+}
+.search-results{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid black;
+  text-align: center;
+  h3{
+    border-bottom: 2px solid black;
+    margin-bottom: 1rem;
+  }
+  .links{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    a{
+      color: black;
+    }
+    a:hover{
+      background-color: rgba(128, 128, 128, 0.457);
+    }
+  }
+}
+.not-found-message{
+  padding: 1rem;
+  text-align: center;
+  font-weight: bolder;
 }
 
 @keyframes disapear{

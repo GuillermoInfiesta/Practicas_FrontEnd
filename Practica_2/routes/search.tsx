@@ -1,16 +1,7 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import Characters from "../components/Characters.tsx";
-import CharactersSearch from "../islands/CharactersSearch.tsx";
 import { CharacterParams } from "../components/Character.tsx";
-/*
-const Page = (props: PageProps) => {
-  return (
-    <div>
-      <CharactersSearch />
-    </div>
-  );
-};
-*/
+import Character from "../components/Character.tsx";
 
 export const handler: Handlers = {
   GET: async (
@@ -18,7 +9,8 @@ export const handler: Handlers = {
     ctx: FreshContext<unknown, Promise<CharacterParams[]>>,
   ) => {
     const url = new URL(ctx.url);
-    const name = url.searchParams.get("name") || "";
+    const name = url.searchParams.get("name") || undefined;
+    if (name === undefined) return ctx.render();
     const res = await fetch(
       `https://supermondongo.deno.dev/${name}`,
     );
@@ -33,11 +25,42 @@ const Page = (props: PageProps) => {
   const characters = props.data || [];
   return (
     <div>
-      <form action="/search">
-        <input type="text" name="name" placeholder="Nombre" />
-        <button>Submit</button>
-      </form>
-      <Characters characters={characters} />
+      <div class="search-form">
+        <h2>¿Quién salvará el mundo hoy?</h2>
+        <form action="/search">
+          <input type="text" name="name" placeholder="Nombre" />
+          <button>Al rescate</button>
+        </form>
+      </div>
+      {characters.length === 0 && (
+            <div class="not-found-message">
+              Malas noticias... Espero que sepas pelear, porque parece que te
+              toca ser el heroe hoy
+            </div>
+          ) ||
+        (
+          <div class="search-display">
+            <div class="search-results">
+              <h3>Todas las coincidencias</h3>
+              <div class="links">
+                {characters.map((ch: CharacterParams) => (
+                  <a href={`/search/?name=${ch.name}`}>
+                    {ch.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div class="full-width">
+              {characters.length !== 0 && (
+                <Character
+                  name={characters[0].name}
+                  image={characters[0].image}
+                  sound={characters[0].sound}
+                />
+              )}
+            </div>
+          </div>
+        )}
     </div>
   );
 };

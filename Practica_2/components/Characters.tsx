@@ -1,6 +1,5 @@
 import { FunctionComponent } from "preact";
 import Character from "./Character.tsx";
-import Character2 from "../islands/Character.tsx";
 import { CharacterParams } from "./Character.tsx";
 
 type CharacersParams = {

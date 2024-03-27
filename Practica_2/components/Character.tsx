@@ -16,7 +16,6 @@ const Character: FunctionComponent<CharacterParams> = (props) => {
       </audio>
       <DeleteButton name={name} />
     </div>
-    //ON BLUR CLEANUP
   );
 };
 export default Character;
