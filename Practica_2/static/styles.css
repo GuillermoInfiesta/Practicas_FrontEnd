@@ -42,6 +42,9 @@ a{
   text-decoration: none;
   color: white;
 }
+h1{
+  border-bottom: 2px solid black;
+}
 .transition-colors {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -138,6 +141,7 @@ a{
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
+
 .navigation-bar {
   background-color: rgb(132, 10, 10);
   color: white;
@@ -153,6 +157,7 @@ a{
 .navigation-button{
   width: 50%;
   text-align: center;
+  transition: 0.4s all;
 }
 .navigation-button:hover{
  background-color: rgb(184, 1, 1);
@@ -170,8 +175,8 @@ a{
   background-color: rgba(245, 245, 220, 0.634);
 }
 .characters-display-grid{
+  margin: 1rem;
   margin-top: 5px;
-  border-top: 2px solid black;
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(4,1fr);
@@ -183,19 +188,28 @@ a{
   padding: 2px;
   height: 400px; 
   border: 3px solid black;
+
   align-items: center;
   border-radius: 10px;
   text-align: center;
   h2{
     margin-top: 1rem;
-    margin-bottom: 1rem;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
+  }
+  .delete-div{
+    visibility: hidden;
+  }
+  button{
+    background-color: red;
   }
 }
 .character-display:hover{
   transform: scale(1.02);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.405);
+  .delete-div{
+    visibility: visible;
+  }
 }
 .ch-image{
   align-self: center;
@@ -222,6 +236,7 @@ a{
   gap: 1rem;
   padding: 1rem;
   border-radius: 10px;
+  box-shadow: 0 10px 15px rgb(0,0,0,0.6);
   button{
     size: 20%;
     margin: auto;
@@ -230,5 +245,30 @@ a{
 .error{
   color: red;
   background-color: rgba(255, 0, 0, 0.134);
-  border: 1px solid red;
+  border: 1px solid red;  
+}
+.success{
+  color:  rgb(0,255,0);
+  background-color: rgba(0, 255, 0, 0.134);
+  border: 1px solid rgb(0,255,0);
+}
+.delete-div{
+  display: flex;
+  gap: 5%;
+  .delete-form{
+    width: 50%;
+    display: flex;
+    align-content: end;
+    input{
+      width: 60%;
+    }
+    button{
+      width: 40%;
+    }
+  }
+}
+
+@keyframes disapear{
+  from{opacity: 1;}
+  to{opacity: 0;}
 }

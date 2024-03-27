@@ -1,5 +1,7 @@
 import { FunctionComponent } from "preact";
-import DeleteButton from "../islands/DeleteButton.tsx";
+import { useState } from "preact/hooks";
+import DeleteButton from "./DeleteButton.tsx";
+
 export type CharacterParams = {
   name: string;
   image: string;
@@ -7,6 +9,7 @@ export type CharacterParams = {
 };
 const Character: FunctionComponent<CharacterParams> = (props) => {
   const { name, image, sound } = props;
+  console.log(image);
   return (
     <div class="character-display">
       <image class="ch-image" src={image} alt={`${name}´s image`} />

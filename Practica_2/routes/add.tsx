@@ -1,5 +1,6 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import { CharacterParams } from "../components/Character.tsx";
+import CharacterAddForm from "../islands/CharacterAddForm.tsx";
 
 type addCharacterProps = {
   method: string;
@@ -14,7 +15,7 @@ export const handler: Handlers = {
       errorMessage: undefined,
     });
   },
-  POST: async (
+  /*POST: async (
     req: Request,
     ctx: FreshContext<unknown, addCharacterProps>,
   ) => {
@@ -47,12 +48,11 @@ export const handler: Handlers = {
       success: true,
       errorMessage: undefined,
     });
-  },
+  },*/
 };
 
-//Si lo hago client side hacer un componente que sea if ok -> mensaje, if mal -> mensaje error, y por default no es nada
 const Page = (props: PageProps<addCharacterProps>) => {
-  const method = props.data.method;
+  /*const method = props.data.method;
   const success = props.data.success;
   const error = props.data.errorMessage;
   return (
@@ -70,7 +70,9 @@ const Page = (props: PageProps<addCharacterProps>) => {
         <span class="error">{error}</span>
       )}
     </div>
-  );
+  );*/
+
+  return <CharacterAddForm />;
 };
 
 export default Page;
