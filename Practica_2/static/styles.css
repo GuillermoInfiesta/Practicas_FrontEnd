@@ -144,6 +144,7 @@ h1{
 
 .full-width{
   width: 100%;
+  background-color: white;
 }
 
 .navigation-bar {
@@ -196,13 +197,12 @@ h1{
 }
 .characters-display-grid{
   margin: 1rem;
-  margin-top: 5px;
   display: grid;
   gap: 1rem;
   justify-content: space-evenly;
   grid-template-columns: repeat(auto-fit,minmax(320px, 350px));
   grid-template-rows: 400px auto;
-  background-color: rgba(245, 245, 220, 0.634);
+  background-color: rgba(241, 241, 222, 0.634);
 }
 .character-display{
   margin: 4px;
@@ -215,7 +215,9 @@ h1{
   text-align: center;
   display: flex;
   flex-direction: column;
+  background-color: rgba(236, 236, 234, 0.634);
   h2{
+    width: 100%;
     margin-top: 0.5rem;
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;

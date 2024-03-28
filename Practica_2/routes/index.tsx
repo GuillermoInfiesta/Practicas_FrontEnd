@@ -7,7 +7,7 @@ export default function Home() {
         </h2>
         <div class="home-page-greeting">
           <p>
-            Si es usted un nuevo heroe, por favor inscribase a la asociacion de
+            Si eres un nuevo heroe, por favor inscribete a la asociacion de
             heroes en la pestana de Añadir.
           </p>
           <p>
