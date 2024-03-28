@@ -27,9 +27,14 @@ const Page = (props: PageProps) => {
     <div>
       <div class="search-form">
         <h2>¿Quién salvará el mundo hoy?</h2>
-        <form action="/search">
+        <form class="form" action="/search">
           <input type="text" name="name" placeholder="Nombre" />
-          <button>Al rescate</button>
+          <button>
+            <img
+              src="https://static-00.iconduck.com/assets.00/search-icon-2048x2048-cmujl7en.png"
+              alt="Al rescate"
+            />
+          </button>
         </form>
       </div>
       {characters.length === 0 && (

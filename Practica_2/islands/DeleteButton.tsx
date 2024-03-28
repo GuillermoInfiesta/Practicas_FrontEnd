@@ -42,7 +42,10 @@ const DeleteButton: FunctionComponent<DeleteButtonParams> = (props) => {
           class="delete-button"
           onClick={deleteCharacter}
         >
-          Delete
+          <img
+            src="https://cdn-icons-png.freepik.com/512/6861/6861362.png"
+            alt="borrar"
+          />
         </button>
       </div>
       {message !== "" && <span class="error">{message}</span>}
