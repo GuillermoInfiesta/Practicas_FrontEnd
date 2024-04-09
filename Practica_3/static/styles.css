@@ -1,0 +1,365 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+button {
+  color: inherit;
+}
+button, [role="button"] {
+  cursor: pointer;
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 1em;
+}
+img,
+svg {
+  display: block;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+.transition-colors {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.my-6 {
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+.my-4 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-8 {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.bg-\[\#86efac\] {
+  background-color: #86efac;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.py-6 {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.py-1 {
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+}
+.border-gray-500 {
+  border-color: #6b7280;
+}
+.bg-white {
+  background-color: #fff;
+}
+.flex {
+  display: flex;
+}
+.gap-8 {
+  grid-gap: 2rem;
+  gap: 2rem;
+}
+.font-bold {
+  font-weight: 700;
+}
+.max-w-screen-md {
+  max-width: 768px;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.border-2 {
+  border-width: 2px;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.hover\:bg-gray-200:hover {
+  background-color: #e5e7eb;
+}
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.width-max{
+  width: 100%;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid black;
+  background-color: rgb(255, 200, 0);
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  height: 4rem;
+}
+
+.logo{
+  width: 44px;
+  height: 44px;
+}
+
+.session-login{
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  button{
+    width: 8rem;
+    border-radius: 10px;
+    font-size: larger;
+  }
+  
+  .login{  
+    background-color: orange;
+    background: linear-gradient(to bottom left, orange, rgb(255, 89, 0));
+    color: white;
+    border: 3px solid white;
+  }
+  .sign-up{
+    background-color: white;
+    color: orange;
+    border: 3px solid orange
+  }
+}
+
+.active-user{
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin: 0.5rem;
+  border: 2px solid skyblue;
+  background-color: white;
+  width: 10rem;
+  
+  .user-icon{
+    font-size:0.5em;  /* change font size should change size of icon */
+  }
+  .user-icon{
+    height:6em; width:6em;  
+    background:none;
+  }
+  
+  .user-icon::before{
+    content:" "; display:block;
+    height:2em; width:2em;
+    background:skyblue;
+    position:relative; left:2em;top:0.8em;
+    border-radius:2em;
+  }
+  .user-icon::after{
+    content:" "; display:block;
+    height:2em;width:4em;
+    background:skyblue;
+    position:relative; left:1em;top:1em;
+    border-radius:2em 2em 0 0;
+  }
+
+  h3{
+    padding: 1rem;
+    font-weight: lighter;
+  }
+  
+}
+
+.home-page{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-image: url(https://img.freepik.com/premium-vector/white-abstract-pattern-background-with-futuristic-modern-style-concept_7505-2300.jpg);
+  .lovers-flex{
+    min-height: 600px;
+    width:80%;
+    margin: auto;
+  }
+}
+
+.search-filters{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  inset: 0rem;
+  height: 6rem;
+  align-items: center;
+  position: sticky;
+  background-color: white;
+  border-radius: 50px;
+  border: 1px solid black;
+}
+
+.lovers-flex{
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  h4{
+    align-self: center;
+    margin: auto;
+  }
+
+}
+
+.lover-card{
+  margin: auto;
+  width: 220px;
+  height: 300px;
+  border: 2px solid black;
+  box-shadow: 0 0 10px black;
+  border-radius: 10px;
+  background-color:white;
+  img{
+    height: 80%;
+    border-radius: 10px;
+  }
+  .details{
+    font-size: larger;
+  }
+}
+
+.popup{
+  position: fixed;
+  top: 15%;
+  left: 33%;
+  background-color: rgb(254, 254, 254);
+  width:  34%;
+  height: 500px;
+  border-radius: 10px;
+  transform: scale(0.1);
+  visibility: hidden;
+  transition: transform 0.2s, top 0.2s;
+  padding: 24px;
+  box-shadow: 0 0 10px rgb(0, 0, 0) ;
+}
+
+.open-popup{
+  visibility: visible;
+  transform: scale(1);
+}
+.blur{
+  filter: brightness(0.4);
+}
+
+.login-header{
+  display: flex;
+  padding-bottom: 20px;
+  border-bottom: 1px solid gray;
+  
+  h1{
+    border-bottom: 2px solid black;
+    align-self: center;
+  }
+  button{
+    float: left;
+    border: none;
+    background-color: transparent;
+    color: red;
+    transform: scale(1.5);
+  }
+
+}
+
+.login-form{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  gap: 2rem;
+  input{
+    height: 2rem;
+  }
+  button{
+    height: 3rem;
+    background-color: #f42f53;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+  }
+  
+}
+
+.login-form-label{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 4px;
+  span{
+    padding-left: 2px;
+    font-size: x-small;
+    color: gray;
+  }
+  input{
+    height: 1.2rem;
+    border: none; 
+    font-size:medium;
+  }
+  input:focus{
+    outline: none;
+  }
+}
+
+.error{
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.354);
+  color: red;
+}
+/*
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%)
+  */
