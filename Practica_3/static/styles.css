@@ -287,6 +287,8 @@ html {
 }
 .blur{
   filter: brightness(0.4);
+  pointer-events: none;
+  scroll-behavior: unset;
 }
 
 .login-header{

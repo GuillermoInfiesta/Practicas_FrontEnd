@@ -1,7 +1,9 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import { LoverCard } from "../components/LoverCard.tsx";
+import { Header } from "../islands/Header.tsx";
 import { HomePage } from "../islands/HomePage.tsx";
 import { Lover } from "../Types.ts";
+import { useSignal } from "@preact/signals";
 
 export const handler: Handlers = {
   GET: async (_req: Request, ctx: FreshContext<unknown, Promise<Lover[]>>) => {
@@ -11,25 +13,11 @@ export const handler: Handlers = {
   },
 };
 export default function Home(props: PageProps) {
-  const a: Lover = props.data[0];
-  //console.log(a);
-  /*return (
-    <div class="main">
-      <LoverCard
-        name="a"
-        age={3}
-        password="a"
-        sex="a"
-        description="a"
-        hobbies={[]}
-        photo="https://img.freepik.com/foto-gratis/concepto-emociones-personas-foto-cabeza-hombre-atractivo-feliz-riendo-sonriendo-exprese-regocijo_1258-26742.jpg"
-        comments={[]}
-      />
-    </div>
-  );*/
+  const logged_in = useSignal<boolean>(false);
   return (
-    <div>
-      <HomePage lovers={props.data} />
+    <div class="width-100">
+      <Header logged={logged_in} />
+      <HomePage lovers={props.data} logged={logged_in} />
     </div>
   );
 }

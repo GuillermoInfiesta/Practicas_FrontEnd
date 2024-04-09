@@ -7,8 +7,6 @@ import { Signal, useSignal } from "@preact/signals";
 export const Header: FunctionComponent<{ logged: Signal<boolean> }> = (
   props,
 ) => {
-  console.log(props.logged.value);
-  props.logged.value = true;
   return (
     <div class="header">
       <div class="flex">
@@ -18,8 +16,7 @@ export const Header: FunctionComponent<{ logged: Signal<boolean> }> = (
         />
         <h2>Ligoteo World</h2>
       </div>
-      <LogOptions />
-      <ActiveUser />
+      {props.logged.value && <ActiveUser /> || <LogOptions />}
     </div>
   );
 };

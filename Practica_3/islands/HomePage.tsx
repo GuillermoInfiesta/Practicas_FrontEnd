@@ -7,6 +7,7 @@ import { LoginPopup } from "./LoginPopup.tsx";
 import { SignUpPopup } from "./SignupPopup.tsx";
 
 type HomePageProps = {
+  logged: Signal<boolean>;
   lovers: Lover[];
 };
 export const HomePage: FunctionComponent<HomePageProps> = (props) => {

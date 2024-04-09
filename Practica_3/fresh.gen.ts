@@ -4,7 +4,6 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
-import * as $_layout from "./routes/_layout.tsx";
 import * as $api_ValidateLogin from "./routes/api/ValidateLogin.ts";
 import * as $api_cookieLog from "./routes/api/cookieLog.ts";
 import * as $index from "./routes/index.tsx";
@@ -23,7 +22,6 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
-    "./routes/_layout.tsx": $_layout,
     "./routes/api/ValidateLogin.ts": $api_ValidateLogin,
     "./routes/api/cookieLog.ts": $api_cookieLog,
     "./routes/index.tsx": $index,
