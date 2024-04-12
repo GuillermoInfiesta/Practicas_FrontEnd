@@ -14,10 +14,18 @@ export const handler: Handlers = {
 };
 export default function Home(props: PageProps) {
   const logged_in = useSignal<boolean>(false);
+  const active_user = useSignal<Lover | undefined>(undefined);
   return (
     <div class="width-100">
-      <Header logged={logged_in} />
-      <HomePage lovers={props.data} logged={logged_in} />
+      <Header
+        logged={logged_in}
+        active_user={active_user}
+      />
+      <HomePage
+        lovers={props.data}
+        logged={logged_in}
+        active_user={active_user}
+      />
     </div>
   );
 }

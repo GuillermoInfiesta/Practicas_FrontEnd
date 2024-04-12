@@ -1,12 +1,14 @@
-import { LoverCard } from "./LoverCard.tsx";
+import { LoverCard } from "../islands/LoverCard.tsx";
 import { FunctionComponent } from "preact";
 import { SearchFiltersProps } from "../Types.ts";
 import { Lover } from "../Types.ts";
 import { useState } from "preact/hooks";
+import { Signal } from "@preact/signals";
 
 type LoversDisplayProps = {
   lovers: Lover[];
   filters: SearchFiltersProps;
+  focused_lover: Signal<Lover>;
 };
 export const LoversFlex: FunctionComponent<LoversDisplayProps> = (props) => {
   const filteredLovers = props.lovers.filter((lov) => {
@@ -49,7 +51,10 @@ export const LoversFlex: FunctionComponent<LoversDisplayProps> = (props) => {
     <div class="lovers-flex">
       {filteredLovers.length !== 0 &&
           filteredLovers.map((lov) => (
-            <LoverCard name={lov.name} age={lov.age} photo={lov.photo} />
+            <LoverCard
+              lover={lov}
+              focused_lover={props.focused_lover}
+            />
           )) || <h4>If you weren´t so picky you wouldn´t be here...</h4>}
     </div>
   );

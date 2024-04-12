@@ -1,11 +1,17 @@
 import { FunctionComponent } from "preact";
 import { useState } from "preact/hooks";
-import { CloseSignUp } from "../methods/PopupInteractions.ts";
+import { CloseAllPopups, CloseSignUp } from "../methods/PopupInteractions.ts";
+import jscookie from "npm:js-cookie@3.0.5";
 
 export const SignUpPopup: FunctionComponent = () => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [password2, setPassword2] = useState<string>("");
+  const [sex, setSex] = useState<string>("");
+  const [age, setAge] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
+  const [hobbies, setHobbies] = useState<string[]>([]);
+  const [photo, setPhoto] = useState<string>("");
   const [error, setError] = useState<string>("");
 
   const signup = async () => {
@@ -21,26 +27,38 @@ export const SignUpPopup: FunctionComponent = () => {
       setError("Passwords dont match");
       return;
     }
+    //Meter el resto de inputs y comprobar
 
-    const response = await fetch("https://lovers.deno.dev/login", {
+    const response_to_create = await fetch("/api/PostNewUser", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name: name, password: password }),
+      body: JSON.stringify({
+        name: name,
+        password: password,
+        photo: photo,
+        description: description,
+        sex: sex,
+        age: age,
+        hobbies: hobbies,
+        comments: [],
+      }),
     });
-    console.log(response.status);
-    if (response.status !== 200) {
-      setError("Name or password are wrong");
+
+    if (response_to_create.status === 200) {
+      jscookie.set("username", name, { expires: 365 });
+      jscookie.set("password", password, { expires: 365 });
+      window.location.reload();
     }
 
-    //CAMBIAR SEÑAL DE LOGIN A TRUE Y ACTUALIZAR LA PÁGINA
+    //Mostrar mensaje de error o algo
   };
   return (
     <div id="popup#signup" class="popup flex flex-col">
       <div class="login-header">
-        <button type="exit" onClick={() => CloseSignUp()}>x</button>
+        <button type="exit" onClick={() => CloseAllPopups()}>x</button>
         <h3>Sign Up</h3>
       </div>
-      <div class="login-form">
+      <div class="login-form overflow">
         <label class="login-form-label">
           <span>Name</span>
           <input
@@ -76,6 +94,52 @@ export const SignUpPopup: FunctionComponent = () => {
           >
           </input>
         </label>
+        <label class="login-form-label">
+          <span>Photo</span>
+          <input
+            type="text"
+            onInput={(e) => {
+              setPhoto(e.currentTarget.value);
+              setError("");
+            }}
+          >
+          </input>
+        </label>
+        <label class="login-form-label">
+          <span>Description</span>
+          <textarea
+            maxLength={400}
+            type="text"
+            onInput={(e) => {
+              setDescription(e.currentTarget.value);
+              setError("");
+            }}
+          >
+          </textarea>
+        </label>
+        <label class="login-form-label">
+          <span>Age</span>
+          <input
+            type="text"
+            onInput={(e) => {
+              setAge(e.currentTarget.value);
+              setError("");
+            }}
+          >
+          </input>
+        </label>
+        <label class="login-form-label">
+          <span>Sex</span>
+          <input
+            type="text"
+            onInput={(e) => {
+              setSex(e.currentTarget.value);
+              setError("");
+            }}
+          >
+          </input>
+        </label>
+
         <button onClick={signup}>Continue</button>
         {error !== "" && <span class="error">{error}</span>}
       </div>

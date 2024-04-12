@@ -2,6 +2,8 @@ import { FunctionComponent } from "preact";
 import { Lover } from "../Types.ts";
 import { AddCookie } from "../islands/AddCookie.tsx";
 import { Signal } from "@preact/signals";
+import { OpenLover } from "../methods/PopupInteractions.ts";
+import { useState } from "preact/hooks";
 
 type LoverCardPorps = {
   name: string;
@@ -15,7 +17,8 @@ export const LoverCard: FunctionComponent<
     <div
       class="lover-card"
       onClick={() => {
-        /*Show popup &*/ props.focused_lover.value = props.lover;
+        OpenLover();
+        props.focused_lover.value = props.lover;
       }}
     >
       <img src={props.lover.photo} alt={`${props.lover.name}´s image`} />

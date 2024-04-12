@@ -1,10 +1,22 @@
 import { FunctionComponent } from "preact";
-import { useState } from "preact/hooks";
-import { CloseLogin } from "../methods/PopupInteractions.ts";
-export const LoginPopup: FunctionComponent = () => {
+import { useEffect, useState } from "preact/hooks";
+import { CloseAllPopups, CloseLogin } from "../methods/PopupInteractions.ts";
+import jscookie from "npm:js-cookie@3.0.5";
+import { Signal } from "@preact/signals";
+
+export const LoginPopup: FunctionComponent<{ logged_in: Signal<boolean> }> = (
+  props,
+) => {
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
+
+  /*useEffect(() => {
+
+    Al recargar pagina: Buscar cookies de name y password,
+    si existen llamar al login del profe para ver si es correcto, en caso de serlo modificar señal logged_in
+
+  }, []);*/
 
   const login = async () => {
     if (name === "" || name.indexOf(" ") !== -1) {
@@ -27,6 +39,11 @@ export const LoginPopup: FunctionComponent = () => {
       return;
     }
 
+    jscookie.set("username", name, { expires: 365 });
+    jscookie.set("password", password, { expires: 365 });
+
+    window.location.reload();
+    /*Si estamos aqui es porque no hay cookie, hashear la contraseña y crear las cookies de name y password*/
     //CAMBIAR SEÑAL DE LOGIN A TRUE Y ACTUALIZAR LA PÁGINA
   };
   return (
@@ -38,7 +55,7 @@ export const LoginPopup: FunctionComponent = () => {
             setName("");
             setPassword("");
             setError("");
-            CloseLogin();
+            CloseAllPopups();
           }}
         >
           x

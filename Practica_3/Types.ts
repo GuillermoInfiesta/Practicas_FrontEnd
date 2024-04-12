@@ -1,6 +1,6 @@
 import { Signal } from "@preact/signals";
 
-export type Comment = {
+export type UserComment = {
   user: string;
   message: string;
 };
@@ -13,7 +13,7 @@ export type Lover = {
   description: string;
   hobbies: string[];
   photo: string;
-  comments: Comment[];
+  comments: UserComment[];
 };
 
 export type SearchFiltersProps = {
