@@ -21,7 +21,6 @@ export const ActiveUserProfile: FunctionComponent<
   const [password, setPassword] = useState<string>("");
 
   useEffect(() => {
-    console.log("putting user data");
     setName(props.user_data.value?.name || "");
     setPhoto(props.user_data.value?.photo || "");
     setAge(props.user_data.value?.age || 0);
@@ -29,7 +28,9 @@ export const ActiveUserProfile: FunctionComponent<
     setHobbies(props.user_data.value?.hobbies || []);
     setSex(props.user_data.value?.sex || "");
     setComments(props.user_data.value?.comments || []);
-  }, []);
+    console.log(props.user_data.value);
+  }, [props.user_data.value]);
+
   const updateData = async () => {
     const response = await fetch("/api/UpdateUser", {
       method: "PUT",
@@ -54,6 +55,7 @@ export const ActiveUserProfile: FunctionComponent<
     window.location.reload();
   };
 
+  //Funciona juraria
   const deleteUser = async () => {
     if (password === "" || password.indexOf(" ") === 0) {
       return;
@@ -100,6 +102,7 @@ export const ActiveUserProfile: FunctionComponent<
       <div id="profile#name">
         <h5>Name</h5>
         <input
+          value={name}
           placeholder={"Current name: " + props.user_data.value?.name}
           onInput={(e) => {
             setName(e.currentTarget.value);
@@ -110,6 +113,7 @@ export const ActiveUserProfile: FunctionComponent<
         <h5>Image</h5>
         <div class="image-input">
           <input
+            value={photo}
             placeholder="URL"
             onInput={(e) => setPhoto(e.currentTarget.value)}
           />
@@ -120,7 +124,7 @@ export const ActiveUserProfile: FunctionComponent<
       <div id="profile#sex&name" class="flex gap-8 width-max">
         <div class="width-30">
           <h5>Sex</h5>
-          <select onChange={(e) => setSex(e.currentTarget.value)}>
+          <select value={sex} onChange={(e) => setSex(e.currentTarget.value)}>
             <option>female</option>
             <option>male</option>
           </select>
@@ -128,6 +132,7 @@ export const ActiveUserProfile: FunctionComponent<
         <div class="width-30">
           <h5>Age</h5>
           <input
+            value={age}
             type="number"
             min={16}
             max={100}
@@ -138,6 +143,7 @@ export const ActiveUserProfile: FunctionComponent<
       <div id="profile#description" class="profile-description">
         <h5>Description</h5>
         <textarea
+          value={description}
           maxLength={400}
           placeholder={"Current description: " +
             props.user_data.value?.description}
@@ -169,12 +175,18 @@ export const ActiveUserProfile: FunctionComponent<
         >
           Add hobbie
         </button>
-        {
-          /*<div>
-          hobbies.map((hobbie) => <p>{hobbie}</p>)
-        </div>*/
-        }
-        <HobbiesBox hobbies={hobbies} />
+        <button
+          class="decorated-button"
+          onClick={() => {
+            const i = hobbies.indexOf(auxhobbie);
+            if (i === -1) return;
+            hobbies.splice(i, 1);
+            setAuxhobbie("");
+          }}
+        >
+          Delete hobbie
+        </button>
+        <HobbiesBox hobbies={hobbies} dynamic={true} />
       </div>
       <div id="profile#comments">
         <h5>Comments</h5>

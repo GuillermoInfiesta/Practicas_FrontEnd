@@ -15,8 +15,27 @@ type HomePageProps = {
   logged: Signal<boolean>;
   active_user: Signal<Lover | undefined>;
   lovers: Lover[];
+  all_hobbies: string[];
 };
 export const HomePage: FunctionComponent<HomePageProps> = (props) => {
+  const name = useSignal<string>("");
+  const age = useSignal<number[]>([0, 100]);
+  const sex = useSignal<string>("any");
+  const hobbies = useSignal<string[]>([]);
+
+  const focused_lover = useSignal<Lover>({
+    name: "",
+    age: 0,
+    sex: "",
+    hobbies: [],
+    comments: [],
+    photo: "",
+    description: "",
+  });
+
+  const credentials = useSignal<
+    { username: string; password: string } | undefined
+  >(undefined);
   useEffect(() => {
     //console.log(active_user.value);
     console.log("Checkeando cookies");
@@ -46,27 +65,20 @@ export const HomePage: FunctionComponent<HomePageProps> = (props) => {
     foo();
     //Checkear el login
     props.logged.value = true;
+    credentials.value = { username: username, password: pw };
     //console.log(jscookie.get());
   }, []); //Solo la vez que carga (aunque de normal esto no nos daba problemas)
-  const name = useSignal<string>("");
-  const age = useSignal<number>(0);
-  const sex = useSignal<string>("any");
-  const hobbies = useSignal<string[]>([]);
-
-  const focused_lover = useSignal<Lover>({
-    name: "",
-    age: 0,
-    sex: "",
-    hobbies: [],
-    comments: [],
-    photo: "",
-    description: "",
-  });
 
   return (
     <div>
       <div id="home" class="home-page">
-        <SearchFilters name={name} age={age} sex={sex} hobbies={hobbies} />
+        <SearchFilters
+          name={name}
+          age={age}
+          sex={sex}
+          hobbies={hobbies}
+          all_hobbies={props.all_hobbies}
+        />
         <LoversFlex
           lovers={props.lovers}
           filters={{ name, age, sex, hobbies }}
@@ -75,7 +87,7 @@ export const HomePage: FunctionComponent<HomePageProps> = (props) => {
       </div>
       <LoginPopup logged_in={props.logged} />
       <SignUpPopup />
-      <LoverProfile lover={focused_lover} />
+      <LoverProfile lover={focused_lover} credentials={credentials} />
       <ActiveUserProfile user_data={props.active_user} />
     </div>
   );

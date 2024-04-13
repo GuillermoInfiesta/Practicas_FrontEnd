@@ -222,6 +222,7 @@ html {
     overflow-x:hidden;
   }
   
+  
 }
 
 .home-page{
@@ -238,14 +239,14 @@ html {
 
 .search-filters{
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 1rem;
   width:90%;
   margin-left: auto;
   margin-right: auto;
-  padding: 2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
   inset: 0rem;
-  height: 6rem;
   align-items: center;
   position: sticky;
   background-color: white;
@@ -275,6 +276,8 @@ html {
   background-color:white;
   img{
     height: 80%;
+    width: 100%;
+    object-fit: cover;
     border-radius: 10px;
   }
   .details{
@@ -313,6 +316,7 @@ html {
       border-radius: 50%;
       width: 250px;
       height: 250px;
+      object-fit: cover;
       align-self: center;
       margin-left: auto;
       margin-right: auto;
@@ -356,6 +360,10 @@ html {
         h5{
           margin-bottom: 0.5rem;
         }
+        .span{
+          font-size: small;
+          height: 100%;
+        }
       }
     }
     .comments{
@@ -390,7 +398,8 @@ html {
     border-bottom: 1px solid rgba(128, 128, 128, 0.432);
     margin-bottom: 1rem;
   }
-  input, select {  
+  input, select { 
+    margin-bottom: 0.5rem;
     height: 2rem;
     width: 40%;
     border-radius: 5px;

@@ -1,6 +1,7 @@
 import { FunctionComponent } from "preact";
 import { Comment } from "./Comment.tsx";
 import { UserComment } from "../Types.ts";
+
 export const CommentsBox: FunctionComponent<{ comments: UserComment[] }> = (
   props,
 ) => {

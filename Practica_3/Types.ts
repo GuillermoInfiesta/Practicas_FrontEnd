@@ -18,7 +18,7 @@ export type Lover = {
 
 export type SearchFiltersProps = {
   name: Signal<string>;
-  age: Signal<number>;
+  age: Signal<number[]>;
   sex: Signal<string>;
   hobbies: Signal<string[]>;
 };

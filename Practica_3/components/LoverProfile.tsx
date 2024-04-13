@@ -5,8 +5,14 @@ import { CloseAllPopups } from "../methods/PopupInteractions.ts";
 import { Comment } from "./Comment.tsx";
 import { CommentsBox } from "./CommentsBox.tsx";
 import { HobbiesBox } from "../islands/HobbiesBox.tsx";
+import { CommentWritter } from "../islands/CommentWritter.tsx";
 
-export const LoverProfile: FunctionComponent<{ lover: Signal<Lover> }> = (
+export const LoverProfile: FunctionComponent<
+  {
+    lover: Signal<Lover>;
+    credentials: Signal<{ username: string; password: string } | undefined>;
+  }
+> = (
   props,
 ) => {
   //Abajo una isla para poder añadir comments
@@ -27,15 +33,24 @@ export const LoverProfile: FunctionComponent<{ lover: Signal<Lover> }> = (
         <div class="about-lover">
           <div class="half">
             <h5>Description</h5>
-            {props.lover.value.description}
+            <div class="span">
+              {props.lover.value.description}
+            </div>
           </div>
           <div class="half">
             <h5>Hobbies</h5>
-            <HobbiesBox hobbies={props.lover.value.hobbies} />
+            <HobbiesBox hobbies={props.lover.value.hobbies} dynamic={false} />
           </div>
         </div>
         <h4>Comments</h4>
         <CommentsBox comments={props.lover.value.comments} />
+        {props.credentials.value !== undefined && (
+          <CommentWritter
+            lover={props.lover.value.name}
+            user={props.credentials.value.username}
+            password={props.credentials.value.password}
+          />
+        )}
       </div>
     </div>
   );

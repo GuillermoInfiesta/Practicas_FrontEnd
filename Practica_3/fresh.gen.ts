@@ -7,13 +7,14 @@ import * as $_app from "./routes/_app.tsx";
 import * as $api_DeleteUser from "./routes/api/DeleteUser.ts";
 import * as $api_FetchUser from "./routes/api/FetchUser.ts";
 import * as $api_PostNewUser from "./routes/api/PostNewUser.ts";
+import * as $api_PublishComment from "./routes/api/PublishComment.ts";
 import * as $api_UpdateUser from "./routes/api/UpdateUser.ts";
 import * as $api_ValidateLogin from "./routes/api/ValidateLogin.ts";
-import * as $api_cookieLog from "./routes/api/cookieLog.ts";
 import * as $index from "./routes/index.tsx";
 import * as $ActiveUser from "./islands/ActiveUser.tsx";
 import * as $ActiveUserProfile from "./islands/ActiveUserProfile.tsx";
 import * as $AddCookie from "./islands/AddCookie.tsx";
+import * as $CommentWritter from "./islands/CommentWritter.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $HobbiesBox from "./islands/HobbiesBox.tsx";
@@ -33,15 +34,16 @@ const manifest = {
     "./routes/api/DeleteUser.ts": $api_DeleteUser,
     "./routes/api/FetchUser.ts": $api_FetchUser,
     "./routes/api/PostNewUser.ts": $api_PostNewUser,
+    "./routes/api/PublishComment.ts": $api_PublishComment,
     "./routes/api/UpdateUser.ts": $api_UpdateUser,
     "./routes/api/ValidateLogin.ts": $api_ValidateLogin,
-    "./routes/api/cookieLog.ts": $api_cookieLog,
     "./routes/index.tsx": $index,
   },
   islands: {
     "./islands/ActiveUser.tsx": $ActiveUser,
     "./islands/ActiveUserProfile.tsx": $ActiveUserProfile,
     "./islands/AddCookie.tsx": $AddCookie,
+    "./islands/CommentWritter.tsx": $CommentWritter,
     "./islands/Counter.tsx": $Counter,
     "./islands/Header.tsx": $Header,
     "./islands/HobbiesBox.tsx": $HobbiesBox,

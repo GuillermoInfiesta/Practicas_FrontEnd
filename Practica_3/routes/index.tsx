@@ -6,10 +6,16 @@ import { Lover } from "../Types.ts";
 import { useSignal } from "@preact/signals";
 
 export const handler: Handlers = {
-  GET: async (_req: Request, ctx: FreshContext<unknown, Promise<Lover[]>>) => {
+  GET: async (_req: Request, ctx: FreshContext<unknown>) => {
     const response = await fetch("https://lovers.deno.dev/");
     const data = await response.json();
-    return ctx.render(data);
+    /*console.log(data.length);
+    const lovers = data.map((
+      lover,
+    ) => [...lover, lover.hobbies.map((hobbie) => hobbie.toLowerCase())]);*/
+    const response2 = await fetch("https://lovers.deno.dev/hobbies");
+    const hobbies = await response2.json();
+    return ctx.render({ lovers: data, hobbies: hobbies });
   },
 };
 export default function Home(props: PageProps) {
@@ -22,7 +28,8 @@ export default function Home(props: PageProps) {
         active_user={active_user}
       />
       <HomePage
-        lovers={props.data}
+        all_hobbies={props.data.hobbies}
+        lovers={props.data.lovers}
         logged={logged_in}
         active_user={active_user}
       />

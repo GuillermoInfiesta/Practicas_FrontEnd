@@ -22,31 +22,21 @@ export const LoversFlex: FunctionComponent<LoversDisplayProps> = (props) => {
       lov.sex.toLowerCase() !== props.filters.sex.value
     ) return false;
 
+    if (
+      lov.age < props.filters.age.value[0] ||
+      lov.age > props.filters.age.value[1]
+    ) return false;
+
+    if (
+      props.filters.hobbies.value.length !== 0 &&
+      lov.hobbies.filter((hobbie) =>
+          props.filters.hobbies.value.includes(hobbie)
+        ).length === 0
+    ) return false;
+
     return true;
   });
 
-  const validateLover = (lover: Lover) => {
-    if (
-      props.filters.name.value !== "" &&
-      lover.name.indexOf(props.filters.name.value) === -1
-    ) {
-      return false;
-    }
-    /*if (
-      props.filters.age.value !== 0 && lover.age !== props.filters.age.value
-    ) {
-      return false;
-    }*/
-    if (
-      props.filters.sex.value !== "Any" && lover.sex !== props.filters.sex.value
-    ) {
-      return false;
-    }
-    /*if (props.filters.hobbies.value.length !== 0) {
-        return false;
-      }*/
-    return true;
-  };
   return (
     <div class="lovers-flex">
       {filteredLovers.length !== 0 &&

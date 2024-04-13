@@ -1,5 +1,7 @@
 import { FunctionComponent } from "preact";
-export const HobbiesBox: FunctionComponent<{ hobbies: string[] }> = (props) => {
+export const HobbiesBox: FunctionComponent<
+  { hobbies: string[]; dynamic: boolean }
+> = (props) => {
   return (
     <div class="hobbies-box">
       {props.hobbies.length !== 0 &&
