@@ -31,4 +31,4 @@ jobs:
         with:
           project: "guillermoin-practicas-f-79"
           entrypoint: "./main.ts"
-          root: "./Practica3"
+          root: "./Practica_3"
