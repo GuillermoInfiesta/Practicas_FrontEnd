@@ -19,9 +19,7 @@ export const SearchFilters: FunctionComponent<
           id="name-input"
           type="text"
           onInput={(e) => props.name.value = e.currentTarget.value}
-        >
-          Name
-        </input>
+        />
       </div>
       <div class="flex flex-col">
         <label>Gender</label>
